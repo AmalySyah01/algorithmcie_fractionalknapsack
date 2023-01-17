@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="fractional_knapsack:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/fractional_knapsack_jar</output-path>
+    <root id="archive" name="fractional_knapsack.jar">
+      <element id="module-output" name="fractional_knapsack" />
+    </root>
+  </artifact>
+</component>
