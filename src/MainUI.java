@@ -12,9 +12,9 @@ public class MainUI extends JFrame
     private JButton btnAdd;
     private JTextArea textArea1;
     private JButton btnCalculate;
-    private JComboBox cboCapacity;
     private JTextField txtValue;
     private JTextField txtWeight;
+    private JTextField txtCapacity;
     public  List<FractionalKnapSack> totalUser;
 
     public MainUI(String title)
@@ -26,12 +26,6 @@ public class MainUI extends JFrame
         this.pack();
         this.setVisible(true);
         this.setResizable(false);
-
-        for (int i = 1; i < 1001; i++)
-        {
-            cboCapacity.addItem("" + i);
-        }
-
 
         totalUser = new ArrayList<>();
         btnAdd.addActionListener(new ActionListener()
@@ -52,7 +46,7 @@ public class MainUI extends JFrame
             {
 
                 FractionalKnapSack.sortListByProfitASC(totalUser);
-                List<FractionalKnapSack> selectedValueFitInCapcity = FractionalKnapSack.getValueFitInCapacity(totalUser, Integer.parseInt(String.valueOf(cboCapacity.getSelectedItem())));
+                List<FractionalKnapSack> selectedValueFitInCapcity = FractionalKnapSack.getValueFitInCapacity(totalUser, Integer.parseInt(String.valueOf(txtCapacity.getText())));
 
                 float totalProfit = 0;
                 textArea1.setText("| TOTAL PROFIT : " + totalProfit);
@@ -62,7 +56,7 @@ public class MainUI extends JFrame
                     totalProfit += item.getProfit();
                 }
 
-                textArea1.setText("| BENEFIT TOTAL WEIGHT : " + totalProfit + "| CAPACITY : " + Integer.parseInt(String.valueOf(cboCapacity.getSelectedItem())) + "\n");
+                textArea1.setText("| BENEFIT TOTAL WEIGHT : " + totalProfit + "| CAPACITY : " + Integer.parseInt(String.valueOf(txtCapacity.getText())) + "\n");
                 textArea1.setText(textArea1.getText() + "======================================================================================\n");
 
                 for (FractionalKnapSack item : selectedValueFitInCapcity)
