@@ -33,8 +33,20 @@ public class MainUI extends JFrame
             @Override
             public void actionPerformed(ActionEvent e)
             {
+                try
+                {
+                    Float.parseFloat(String.valueOf(txtValue.getText()));
+                    Float.parseFloat(String.valueOf(txtWeight.getText()));
+                    Float.parseFloat(String.valueOf(txtCapacity.getText()));
+                }
+                catch (NumberFormatException ex)
+                {
+                    JOptionPane.showMessageDialog(null, "Error : " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
                 textArea1.setText(textArea1.getText() + "|NAME - " + txtObject.getText() + " |" + "|\tVALUE - " + String.valueOf(txtValue.getText()) + " |" + "|\tWEIGHT - " + String.valueOf(txtWeight.getText()) + " |\n");
-                FractionalKnapSack temp = new FractionalKnapSack(txtObject.getText(),Integer.parseInt(String.valueOf(txtValue.getText())),Integer.parseInt(String.valueOf(txtWeight.getText())));
+                FractionalKnapSack temp = new FractionalKnapSack(txtObject.getText(),Float.parseFloat(String.valueOf(txtValue.getText())),Float.parseFloat(String.valueOf(txtWeight.getText())));
                 totalUser.add(temp);
             }
         });
@@ -46,7 +58,7 @@ public class MainUI extends JFrame
             {
 
                 FractionalKnapSack.sortListByProfitASC(totalUser);
-                List<FractionalKnapSack> selectedValueFitInCapcity = FractionalKnapSack.getValueFitInCapacity(totalUser, Integer.parseInt(String.valueOf(txtCapacity.getText())));
+                List<FractionalKnapSack> selectedValueFitInCapcity = FractionalKnapSack.getValueFitInCapacity(totalUser, Float.parseFloat(String.valueOf(txtCapacity.getText())));
 
                 float totalProfit = 0;
                 textArea1.setText("| TOTAL PROFIT : " + totalProfit);
@@ -56,7 +68,7 @@ public class MainUI extends JFrame
                     totalProfit += item.getProfit();
                 }
 
-                textArea1.setText("| BENEFIT TOTAL WEIGHT : " + totalProfit + "| CAPACITY : " + Integer.parseInt(String.valueOf(txtCapacity.getText())) + "\n");
+                textArea1.setText("| BENEFIT TOTAL WEIGHT : " + totalProfit + "| CAPACITY : " + Float.parseFloat(String.valueOf(txtCapacity.getText())) + "\n");
                 textArea1.setText(textArea1.getText() + "======================================================================================\n");
 
                 for (FractionalKnapSack item : selectedValueFitInCapcity)

@@ -4,11 +4,11 @@ public class FractionalKnapSack
 {
     private String object;
     private float profit;
-    private int weight;
-    private  int weightMinusCapacity;
+    private float weight;
+    private  float weightMinusCapacity;
     private float profitDevideWeight;
 
-    FractionalKnapSack(String  object, float profit, int weight)
+    FractionalKnapSack(String  object, float profit, float weight)
     {
         this.object = object;
         this.profit = profit;
@@ -32,19 +32,19 @@ public class FractionalKnapSack
     {
         return object;
     }
-    public int getWeight()
+    public float getWeight()
     {
         return weight;
     }
-    public int getWeightMinusCapacity()
+    public float getWeightMinusCapacity()
     {
         return weightMinusCapacity;
     }
-    public void setWeightMinusCapacity(int weightMinusCapacity)
+    public void setWeightMinusCapacity(float weightMinusCapacity)
     {
         this.weightMinusCapacity = weightMinusCapacity;
     }
-    public void setWeight(int weight)
+    public void setWeight(float weight)
     {
         this.weight = weight;
     }
@@ -72,12 +72,12 @@ public class FractionalKnapSack
         list.add(value);
     }
 
-    public static List<FractionalKnapSack> getValueFitInCapacity(List<FractionalKnapSack> list, int capacity)
+    public static List<FractionalKnapSack> getValueFitInCapacity(List<FractionalKnapSack> list, float capacity)
     {
         //Create new temporary Array
         List<FractionalKnapSack> temp = new ArrayList<>();
         //40
-        int temptCapacity = capacity;
+        float temptCapacity = capacity;
 
         for (FractionalKnapSack item: list)
         {
@@ -95,7 +95,7 @@ public class FractionalKnapSack
 
                 if(temptCapacity <= 0)
                 {
-                    int previouseRemainingWeight = temp.get(temp.size() - 1).getWeightMinusCapacity();
+                    float previouseRemainingWeight = temp.get(temp.size() - 1).getWeightMinusCapacity();
                     float currProfit = (item.getProfit()) * ((float) previouseRemainingWeight/(float)item.getWeight());
                     item.setProfit(currProfit);
 
