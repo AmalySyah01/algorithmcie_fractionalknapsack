@@ -8,7 +8,7 @@
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="5b949" binding="parentPanel" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="5b949" binding="parentPanel" layout-manager="GridLayoutManager" row-count="7" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
@@ -33,22 +33,10 @@
                   <text value="Item"/>
                 </properties>
               </component>
-              <component id="aca6f" class="javax.swing.JTextField" binding="txtObject">
+              <component id="aca6f" class="javax.swing.JTextField" binding="txtItem">
                 <constraints/>
                 <properties>
                   <columns value="10"/>
-                </properties>
-              </component>
-              <component id="210c9" class="javax.swing.JLabel">
-                <constraints/>
-                <properties>
-                  <text value="Value"/>
-                </properties>
-              </component>
-              <component id="f969f" class="javax.swing.JTextField" binding="txtValue">
-                <constraints/>
-                <properties>
-                  <columns value="5"/>
                 </properties>
               </component>
               <component id="5bee4" class="javax.swing.JLabel">
@@ -58,6 +46,18 @@
                 </properties>
               </component>
               <component id="14ee4" class="javax.swing.JTextField" binding="txtWeight">
+                <constraints/>
+                <properties>
+                  <columns value="5"/>
+                </properties>
+              </component>
+              <component id="210c9" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <text value="Value"/>
+                </properties>
+              </component>
+              <component id="f969f" class="javax.swing.JTextField" binding="txtValue">
                 <constraints/>
                 <properties>
                   <columns value="5"/>
@@ -93,13 +93,13 @@
           <scrollpane id="c6ca">
             <constraints>
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <minimum-size width="-1" height="25"/>
+                <minimum-size width="-1" height="20"/>
               </grid>
             </constraints>
             <properties/>
             <border type="none"/>
             <children>
-              <component id="6552a" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
+              <component id="13711" class="javax.swing.JTable" binding="table1" default-binding="true">
                 <constraints/>
                 <properties/>
               </component>
@@ -108,7 +108,7 @@
           <grid id="be7ed" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
-              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties/>
             <border type="none"/>
@@ -146,6 +146,46 @@
               </component>
             </children>
           </grid>
+          <grid id="eba6" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-6314840"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="3c4dd" class="javax.swing.JButton" binding="btnClear">
+                <constraints/>
+                <properties>
+                  <text value="Clear"/>
+                </properties>
+              </component>
+              <component id="ae8e3" class="javax.swing.JButton" binding="btnDelete">
+                <constraints/>
+                <properties>
+                  <text value="Delete"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <scrollpane id="6e0f">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <minimum-size width="-1" height="20"/>
+              </grid>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="1ba2" class="javax.swing.JTable" binding="table2">
+                <constraints/>
+                <properties>
+                  <preferredScrollableViewportSize width="450" height="50"/>
+                </properties>
+              </component>
+            </children>
+          </scrollpane>
         </children>
       </grid>
     </children>
